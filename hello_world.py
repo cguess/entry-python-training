@@ -27,7 +27,7 @@
 # method, followed by parenthesis. Inside the parenthesis you pass the information you want
 # to give to the method.
 #
-# Argument: A piece of information that can be passed into, and is expected, by the method.
+# Argument: A piece of information that can be passed into, and is expected by, the method.
 # For instance, the "print" method below needs something to print, so it expect you to give
 # it a string to do so with.
 #
