@@ -301,6 +301,14 @@ print(a_list)
 ```
 
 Loops:
+
+Just loop!
+
+```
+while True:
+    # something!
+```
+
 Loop through each element and do something!
 
 ```
@@ -308,6 +316,8 @@ a_list = ["one", "two", "three", "four"]
 
 for this_number in a_list:
     print(this_number)
+
+print(a_list)
 
 > 'one'
 > 'two'
@@ -327,11 +337,34 @@ how to kill a program
 ctrl-c
 
 
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 
 
+```
+count = 0
+while count < 10:
+    print("hello!")
+    count = count + 1
+
+print(count)
+
+> 'hello!'
+> 'hello!'
+> 'hello!'
+> 'hello!'
+> 'hello!'
+> 'hello!'
+> 'hello!'
+> 'hello!'
+> 'hello!'
+> 'hello!'
+> 10
+```
 
 
-
+1.) Write a fibonnaci sequence that prints forever (ctrl-c) to stop the program
+2.) Print only the first ten elements of the fibonnaci sequence
+3.) Print the first ten elements of the fibonnaci sequence all at once (from an array)
 
 
 
