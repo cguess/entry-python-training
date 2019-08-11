@@ -222,3 +222,122 @@ print(y == x)
 print(x == z)
 > False
 ```
+
+### Collections
+
+Now that we have an understanding of Numbers, Strings and Booleans let's take a look at grouping them.
+There's a couple of way that Python let's us form collections of other types, but we'll start with
+a basic and very useful (maybe the most useful) one.
+
+#### Lists
+
+A list (sometimes called an array in other programming languages), is an ordered collection of elements.
+
+```
+a_list = ["one", "two", "three", "four"]
+print(a_list)
+
+> ['one', 'two', 'three', 'four']
+```
+
+```
+a_number_list = [1.2, 4, 7, 10]
+print(a_number_list)
+
+>[1.2, 4, 7, 10]
+```
+
+```
+a_mixed_array = ["hello", 12, True]
+print(a_mixed_array)
+
+> ['hello', 12, True]
+```
+
+To Refer:
+Remember that Python is zero-index
+```
+a_list = ["one", "two", "three", "four"]
+first_element = a_list[0]
+print(first_element)
+
+> 'one'
+```
+
+To add an element we `append()` it
+
+```
+a_list = ["one", "two", "three", "four"]
+a_list.append("five")
+print(a_list)
+
+> ['one', 'two', 'three', 'four', 'five']
+```
+
+To remove an element by index we can `pop()`
+
+```
+a_list = ["one", "two", "three", "four"]
+a_list.pop(0)
+
+> 'one'
+
+print(a_list)
+
+> ['two', 'three', 'four']
+```
+
+To remove a value that you're not sure where it is we `remove()`
+
+```
+a_list = ["one", "two", "three", "four"]
+a_list.remove("two")
+
+> 'two'
+
+print(a_list)
+
+> ['one', 'three', 'four']
+```
+
+Loops:
+Loop through each element and do something!
+
+```
+a_list = ["one", "two", "three", "four"]
+
+for this_number in a_list:
+    print(this_number)
+
+> 'one'
+> 'two'
+> 'three'
+> 'four'
+```
+
+```
+count = 5
+count = count + 1
+
+print(count)
+> 6
+```
+
+how to kill a program
+ctrl-c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
