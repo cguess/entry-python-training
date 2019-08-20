@@ -366,10 +366,63 @@ print(count)
 2.) Print only the first ten elements of the fibonnaci sequence
 3.) Print the first ten elements of the fibonnaci sequence all at once (from an array)
 
+#### Dictionaries
 
+Sometimes called "Hashes" in other languages. In Python "hashes" are something else.
 
+Dictionaries are like Lists, but instead of being in a specifica order, where you refere to the
+elements by their index (i.e. list[0]) you refer to elements by keys, which are like indexes,
+but are strings.
 
+For instance!
 
+While you would make a list like this:
+```
+list = ['a', 'b', 'c']
+```
+
+A dictionary would be:
+```
+dictionary = {'a_value': 'a', 'b_value': 'b', 'c_value': 'c'}
+
+print(dictionary['a_value'])
+> a
+```
+
+A use for this, for instance, would be to keep something that describes something else
+Like a an entry in a real dictionary:
+
+Note: keys are unordered (for our purposes)
+```
+entry = {'headword': 'cannon', 'definition': 'A large mounted weapon that fires heavy projectiles. Cannon include guns, howitzers, and mortars.', 'etymology': '[Middle English canon, from Old French, from Old Italian cannone, augmentative of canna, tube, from Latin, reed; see cane.]', 'count': 12}
+
+print(entry['headword'])
+> cannon
+```
+
+You can store dictionaries in lists!
+
+```
+entry1 = {'headword': 'cannon', ...}
+entry2 = {'headword': 'gun', ...}
+entry3 = {'headword': 'tank', ...}
+
+definitions = [entry1, entry2, entry3]
+```
+
+Homework:
+(all in the same page)
+
+1. Create a array of `entry` dictionaries
+2. print out each `headword` like follows
+
+```
+cannon
+gun
+tank
+```
+
+Note: Your solution should not care how many elements are in the list
 
 
 
