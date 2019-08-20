@@ -1,3 +1,5 @@
+# Much better than before. See my notes on the first example though, they apply here as well.
+
 #2. Print only the first ten elements of the fibonacci sequence 
 
 a = 0
@@ -16,6 +18,10 @@ while True:
 
 	count = count + 1
 
+        # This could also be < 10, which *could* be more readable.
+        # This is good though if somehow the user could reset "count"
+        # since it'll stop it from every going above 9.
+        # Basically both are good, but consider the use case.
 	if count > 9:				
 		break
 
