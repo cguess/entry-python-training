@@ -1,0 +1,156 @@
+# Introduction to Python
+
+## Part 3: Functions
+
+### Functions
+
+What we've done so far is fine and good, and actually how the first programming languages were built, but what if 
+we want to use the same code in different places? We could copy and paste, but that seems absurd. So instead we let the
+computer, more or less, do it for us!
+
+#### How this looks
+
+Every function has four parts (all languages, more or less, do as well, but Pythons are unique). These parts are the "keyword"
+the "name", the "parameters" and the "body". The first three are on one line, followed by a `:` and a new line. The body starts
+then on the next line, indented by 4 spaces.
+
+Here's a very simple example
+
+```
+def test_function():
+    print("Hello World!")
+```
+
+Here the `def` says that we're creating a function. Following that `test_function` is the name of the function. Due to
+convention we put underscores (`_`) inbetween words in the function name. Following that is the parameters list. This is
+surrounded by parentesis. Here, for simplicity's sake, we have no parameters, so it's empty. We call this entire line the
+"signature" or "definition" of the function. The signature ends with a single colon (`:`) and a new line
+
+Following that we have the function body, this is indented four spaces. Following that the fuctions ends when there's a blank
+space followed by another line.
+
+For example:
+```
+def test_function():
+    print("Hello World!")
+
+test_funtion()
+```
+
+`> Hello World!`
+
+This previous example also shows another important action, how to "call" a function. Calling a function means "run this
+piece of code and either do something or give me back the results." In this case it will print out `Hello World!`.
+
+But let's say you want to pass a piece of information to the function. So let's modify our previous example and have it print
+out whatever we pass in.
+
+```
+def test_function(foo):
+    print(foo)
+
+test_function("bar")
+```
+> `bar`
+
+Here `foo` is a variable within the `test_function` function, and you can do whatever you want with it.
+
+Parameteres have a name, and you can pass in multiple parameters to a function. However, the trick is the function has to
+expect the parameters and this is called "defining" them. So in the previous example the `test_function` defines `foo`, so the
+first thing passed to `test_function` will be assigned to `foo`
+
+We can then call the same function over and over with different values.
+
+```
+def test_function(foo):
+    print(foo)
+
+test_function("bar")
+test_function("bang")
+```
+> `bar`
+> `bang`
+
+This is obviously overly complicated for this example, however let's look at something more "realworld." What if we are writing
+something that deal with a lot of currency, like a cash register. This means we need a lot of numbers we print out to have a
+"$" sign before it. Now we could do something like `print "$" + amount` over and over, but then we also would have to concern
+ourselves with rounding any division, making sure the decimal is the right place, etc. etc. Also, what if we wanted to change
+currency? Then we'd have to go in and change every single line. This becomes a lot more complicated.
+
+Here we won't go into how to do all of this, but we'll show an example of how it could be used. One thing to remember is that,
+after a function ends (or "returns" as it's properly called) all the variables it has set goes away.
+
+```
+def format_as_currency(amount):
+    print("$" + amount)
+
+format_as_currency("233")
+format_as_currency("42")
+```
+> `$233`
+> `$42`
+
+So in a function you can define your own variables that are specific for that function. For example
+
+```
+def format_as_currency(amount):
+    currency_symbol = "$"
+    print(currency_symbol + amount)
+
+format_as_currency("233")
+format_as_currency("42")
+```
+> `$233`
+> `$42`
+
+Which does the same, but now we could also change it easier:
+```
+def format_as_currency(amount):
+    currency_symbol = "€"
+    print(currency_symbol + amount)
+
+format_as_currency("233")
+format_as_currency("42")
+```
+> `€233`
+> `€42`
+
+Let's say we wanted to be able to split the number between certain amount of checks. Like you do at a restaurant with your
+friends. This gets a bit ahead of ourselves, so don't worry about the specific actions, so much as why this is useful.
+
+```
+def format_as_currency(amount, number_of_ways_to_split):
+    currency_symbol = "€"
+    split_amount = amount / number_of_ways_to_split
+    print(currency_symbol + split_amount)
+
+format_as_currency("42", 7)
+format_as_currency("233", 4)
+```
+> `€7`
+> `€33.2857142857`
+
+This doesn't work because you can't have `.2857142857` Euros. So we need to round the number as well to two decimals.
+Luckily, Python supports this pretty easily, but doing it every time would get cumbersom. There's a `round` function, that
+takes two parameters, the first is the number, the second is the number of decimal places to round to.
+
+```
+def format_as_currency(amount, number_of_ways_to_split):
+    currency_symbol = "€"
+    split_amount = amount / number_of_ways_to_split
+    rounded_split_amount = round(split_amount, 2)
+    print(currency_symbol + rounded_split_amount)
+
+format_as_currency("42", 7)
+format_as_currency("233", 4)
+```
+> `€7`
+> `€33.27`
+
+Functions can call other functions as well, like above with `round` and `print`.
+
+Some Homework:
+
+Create a function that takes a nominator and denominator, and prints it out as a percentage.
+If I call `format_as_percentage(2, 4)`, it should output `50%`. If I call `format_as_percentage(1, 3)` it should be
+`33.333%`.
